@@ -1,0 +1,58 @@
+@import './variables.scss';
+
+@mixin layoutMain {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 20px;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+@mixin browsersBox-Size {
+    -webkit-box-sizing: $borderBox;
+    -moz-box-sizing: $borderBox;
+     box-sizing: $borderBox;
+}
+
+@mixin figureTranslates {
+    -webkit-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+               -o-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%);
+}
+@mixin figureTransition  {
+            -webkit-transition: all 1s ease-in-out;
+              -o-transition: all 1s ease-in-out;
+              transition: all 1s ease-in-out;
+}
+@mixin transition ($val1,$val2,$val3) {
+    -webkit-transition: $val1,$val2,$val3;
+      -o-transition: $val1,$val2,$val3;
+      transition: $val1,$val2,$val3;
+}
+@mixin figureBorder {
+    position: absolute;
+    border-top: 2px solid $figureColor;
+    border-left: 2px solid $figureColor;
+    height: 20px;
+    width: 20px;
+}
+@mixin navTransform ($value1, $value2){
+    -webkit-transform: scale($value1, $value2);
+            -ms-transform: scale($value1, $value2);
+             -o-transform: scale($value1, $value2);
+                transform: scale($value1, $value2);
+}
+
+@mixin navOriginTransform ($value1, $value2){
+    -webkit-transform-origin: $value1, $value2;
+            -ms-transform-origin: $value1, $value2;
+             -o-transform-origin: $value1, $value2;
+                transform-origin: $value1, $value2;
+}
+
+@mixin positionDispl {
+    display: block;
+    position: absolute;
+}
