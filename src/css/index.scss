@@ -1,311 +1,294 @@
-@import './base/layout.scss';
-@import './base/typography.scss';
-@import './utils/mixins.scss';
-@import './utils/variables.scss';
+  @import './utils/variables.scss';
+  @import './utils/mixins.scss';  
+  @import './base/layout.scss';
+  @import './base/typography.scss';
+  
+ 
 
 
 
 
 
-    html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    b, u, i, center,
-    dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend,
-    table, caption, tbody, tfoot, thead, tr, th, td,
-    article, aside, canvas, details, embed,
-    figure, figcaption, footer, header, hgroup,
-    menu, nav, output, ruby, section, summary,
-    time, mark, audio, video{
-        @include layoutMain
-     }
-    
-     /* HTML5 display-role reset for older browsers */
-    
-    
-       article, aside, details, figcaption, figure,
-        footer, header, hgroup, menu, nav, section {
-          display: block; }
+
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video{
+          @include layoutMain;
+       }
+      
+       /* HTML5 display-role reset for older browsers */
+      
+      
+         article, aside, details, figcaption, figure,
+          footer, header, hgroup, menu, nav, section {
+            display: block; }
+          
+          body {
+            line-height: 1}
+          
+          ol, ul {
+            list-style: none; }
+          
+          blockquote, q {
+            quotes: none; }
+          
+          blockquote:before, blockquote:after,
+          q:before, q:after {
+            content: '';
+            content: none; }
+          
+          table {
+            border-collapse: collapse;
+            border-spacing: 0; }
+          
+          * {
+           @include  browsersBox-Size }
+          
+          a {
+            text-decoration: none;
+            color: inherit; }
+          
+          .clearfix:after {
+            content: '';
+            display: block;
+            width: $maxWidth;
+            clear: both; }
+          
+          html {
+            overflow-x: hidden;
+            width:  $maxWidth; }
+          
+          body {
+            font-family: $fontMain;
+            overflow-x: hidden;
+            width:  $maxWidth;
+            padding: 25px;
+            line-height: 1.5;
+            color: #686868; }
+          
+          .container {
+            width:  $maxWidth;
+            margin: 0 auto;
+            max-width: 1200px; }
+          
+          .text-center, .social-wrap, h2, h3, .nav-main {
+            text-align: center; }
+          
+          .arrow {
+            -webkit-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s; 
+            &:hover {
+                  -webkit-transform: $scaleValue;
+                  -ms-transform: $scaleValue;
+                   -o-transform: $scaleValue;
+                      transform: $scaleValue; }}
+
+  /* MODULES - Individual style components */
+      /* buttons */
+      button {
+          background-color: $btnColor;
+          color: #FFFFFF;
+          border: none;
+          cursor: pointer;
+          padding: 10px 30px;
+          text-transform: uppercase;
+          font-size: 12px;
+          font-size: 0.75rem;
+          -webkit-transition: opacity 0.5s;
+          -o-transition: opacity 0.5s;
+          transition: opacity 0.5s; }
+          button:hover {
+            opacity: 0.6; }
         
-        body {
-          line-height: 1}
+        .button-send {
+          margin-top: 10px; }
         
-        ol, ul {
-          list-style: none; }
+        /* form */
+        form {
+          margin: 20px auto;
+          width: $maxWidth;
+          max-width: 550px; 
+          p {
+            font-size: 12px;
+            font-size: 0.75rem; }
+          }
         
-        blockquote, q {
-          quotes: none; }
-        
-        blockquote:before, blockquote:after,
-        q:before, q:after {
-          content: '';
-          content: none; }
-        
-        table {
-          border-collapse: collapse;
-          border-spacing: 0; }
-        
-        * {
-         @include  browsersBox-Size }
-        
-        a {
-          text-decoration: none;
-          color: inherit; }
-        
-        .clearfix:after {
-          content: '';
+        input ,
+        textarea {
           display: block;
           width: $maxWidth;
+          font-size: 12px;
+          font-size: 0.75rem;
+          outline: none;
+          padding: 15px;
+          color: #686868;
+          border: 2px solid $btnColor;
+          margin-bottom: 20px; }
+        
+        textarea {
+          resize: none; }
+        
+        section {
+          padding: 50px 0; }
+          section .text-center p, section h2 p, section h3 p, section .nav-main p {
+            padding: 0 20px;
+            max-width: 900px;
+            margin: 0 auto; }
+        
+        /* work */
+        .work-wrap:before,
+        .work-wrap:after {
+          content: " ";
+          display: table; }
+        
+        .work-wrap:after {
           clear: both; }
         
-        html {
-          overflow-x: hidden;
-          width:  $maxWidth; }
-        
-        body {
-          font-family: $fontMain;
-          overflow-x: hidden;
-          width:  $maxWidth;
-          padding: 25px;
-          line-height: 1.5;
-          color: #686868; }
-        
-        .container {
-          width:  $maxWidth;
-          margin: 0 auto;
-          max-width: 1200px; }
-        
-        .text-center, .social-wrap, h2, h3, .nav-main {
-          text-align: center; }
-        
-        .arrow {
-          -webkit-transition: all 0.5s;
-          -o-transition: all 0.5s;
-          transition: all 0.5s; 
-          &:hover {
-                -webkit-transform: $scaleValue;
-                -ms-transform: $scaleValue;
-                 -o-transform: $scaleValue;
-                    transform: $scaleValue; }}
-
-/* MODULES - Individual style components */
-    /* buttons */
-    button {
-        background-color: $btnColor;
-        color: #FFFFFF;
-        border: none;
-        cursor: pointer;
-        padding: 10px 30px;
-        text-transform: uppercase;
-        font-size: 12px;
-        font-size: 0.75rem;
-        -webkit-transition: opacity 0.5s;
-        -o-transition: opacity 0.5s;
-        transition: opacity 0.5s; }
-        button:hover {
-          opacity: 0.6; }
-      
-      .button-send {
-        margin-top: 10px; }
-      
-      /* form */
-      form {
-        margin: 20px auto;
-        width: $maxWidth;
-        max-width: 550px; 
-        p {
-          font-size: 12px;
-          font-size: 0.75rem; }
-        }
-      
-      input ,
-      textarea {
-        display: block;
-        width: $maxWidth;
-        font-size: 12px;
-        font-size: 0.75rem;
-        outline: none;
-        padding: 15px;
-        color: #686868;
-        border: 2px solid $btnColor;
-        margin-bottom: 20px; }
-      
-      textarea {
-        resize: none; }
-      
-      section {
-        padding: 50px 0; }
-        section .text-center p, section h2 p, section h3 p, section .nav-main p {
-          padding: 0 20px;
-          max-width: 900px;
-          margin: 0 auto; }
-      
-      /* work */
-      .work-wrap:before,
-      .work-wrap:after {
-        content: " ";
-        display: table; }
-      
-      .work-wrap:after {
-        clear: both; }
-      
-      figure {
-        position: relative;
-        margin: 10px 0;
-        cursor: pointer;
-        display: inline-block;
-        width: 100%; }
-        figure:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: $maxWidth;
-          height: $maxWidth;
-          background-color: #000;
-          opacity: 0;
-          @include figureTransition; }
-        figure:hover:before {
-          opacity: 0.7; }
-        figure:hover .caption-head:before {
-          left: $hoverBeforeValue;
-          top: $hoverBeforeValue; }
-        figure:hover .caption-head:after {
-          right: $hoverBeforeValue;
-          top: $hoverBeforeValue; }
-        figure:hover .caption-blurb:before {
-          left: $hoverBeforeValue;
-          bottom: $hoverBeforeValue; }
-        figure:hover .caption-blurb:after {
-          right: $hoverBeforeValue;
-          bottom: $hoverBeforeValue; }
-        figure img {
-          width: $maxWidth;
-          display: block; }
-        figure figcaption {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          min-width: 200px;
-          @include figureTranslates;
-          color: $figureColor;
-          line-height: 2;
-          @include figureTransition;}
-          figure figcaption:before {
+        figure {
+          position: relative;
+          margin: 10px 0;
+          cursor: pointer;
+          display: inline-block;
+          width: 100%; }
+          figure:before {
             content: '';
             position: absolute;
-            width: 80%;
-            height: 2px;
-            top: -webkit-calc(50% + 2px);
-            top: calc(50% + 2px);
+            top: 0;
+            left: 0;
+            width: $maxWidth;
+            height: $maxWidth;
+            background-color: #000;
+            opacity: 0;
+            @include figureTransition; }
+          figure:hover:before {
+            opacity: 0.7; }
+          figure:hover .caption-head:before {
+            left: $hoverBeforeValue;
+            top: $hoverBeforeValue; }
+          figure:hover .caption-head:after {
+            right: $hoverBeforeValue;
+            top: $hoverBeforeValue; }
+          figure:hover .caption-blurb:before {
+            left: $hoverBeforeValue;
+            bottom: $hoverBeforeValue; }
+          figure:hover .caption-blurb:after {
+            right: $hoverBeforeValue;
+            bottom: $hoverBeforeValue; }
+          figure img {
+            width: $maxWidth;
+            display: block; }
+          figure figcaption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 200px;
             @include figureTranslates;
-            background-color: $figureColor; }
-          figure figcaption .caption-head {
-            position: relative;
-            font-family: $fontMain;
-            text-transform: uppercase;
-            font-size: 22px;
-            font-size: 1.375rem; }
-            figure figcaption .caption-head:before {
+            color: $figureColor;
+            line-height: 2;
+            @include figureTransition;}
+            figure figcaption:before {
               content: '';
-              
-              @include figureBorder;
-              
-              left: 0;
-              top: 0;
-              @include figureTransition;
-              }
-            figure figcaption .caption-head:after {
-              content: '';
-              @include figureBorder;
-              right: 0;
-              top: 0;
-              @include figureTransition; }
-          figure figcaption .caption-blurb {
-            position: relative; }
-            figure figcaption .caption-blurb:before {
-              content: '';
-              @include figureBorder;
-              left: 0;
-              bottom: 0;
-              @include figureTransition;
-             }
-            figure figcaption .caption-blurb:after {
-              content: '';
-              @include figureBorder;
-              right: 0;
-              bottom: 0;
-              @include figureTransition; }
-      
-      #testimonials {
-        padding: 5px 0; }
-      
-      /* video*/
-      .video {
-        height: 500px;
-        background: url("https://i.imgur.com/0IRYG66.jpg") no-repeat;
-        background-size: cover;
-        position: relative; }
-      
-      /*contact */
-      #contact {
-        position: relative; }
-        #contact:before {
-          content: '';
-          position: absolute;
-          display: block;
-          top: 0;
-          left: 0;
-          width: $maxWidth;
-          height: $maxWidth;
-          background: url("https://image.ibb.co/h9qYHA/bg-video.png") no-repeat center center;
-          opacity: 0.1;
-          z-index: -1; }
-      
-      h2, h3 {
-        position: relative;
-        font-family: $fontMain;
-        text-transform: uppercase;
-        padding-bottom: 14px;
-        margin-bottom: 30px;
-        font-size: 22px;
-        font-size: 1.375rem; }
-        h2:after, h3:after {
-          content: '';
-          position: absolute;
-          display: block;
-          width: 72px;
-          height: 3px;
-          left: -webkit-calc(50% - 36px);
-          left: calc(50% - 36px);
-          bottom: 0px;
-          background:$btnColor; }
-      
-      h3 {
-        text-transform: none; }
+              position: absolute;
+              width: 80%;
+              height: 2px;
+              top: -webkit-calc(50% + 2px);
+              top: calc(50% + 2px);
+              @include figureTranslates;
+              background-color: $figureColor; }
+            figure figcaption .caption-head {
+              position: relative;
+              font-family: $fontMain;
+              text-transform: uppercase;
+              font-size: 22px;
+              font-size: 1.375rem; }
+              figure figcaption .caption-head:before {
+                content: '';
+                
+                @include figureBorder;
+                
+                left: 0;
+                top: 0;
+                @include figureTransition;
+                }
+              figure figcaption .caption-head:after {
+                content: '';
+                @include figureBorder;
+                right: 0;
+                top: 0;
+                @include figureTransition; }
+            figure figcaption .caption-blurb {
+              position: relative; }
+              figure figcaption .caption-blurb:before {
+                content: '';
+                @include figureBorder;
+                left: 0;
+                bottom: 0;
+                @include figureTransition;
+               }
+              figure figcaption .caption-blurb:after {
+                content: '';
+                @include figureBorder;
+                right: 0;
+                bottom: 0;
+                @include figureTransition; }
+        
+        #testimonials {
+          padding: 5px 0; }
+        
+        /* video*/
+        .video {
+          height: 500px;
+          background: url("https://i.imgur.com/0IRYG66.jpg") no-repeat;
+          background-size: cover;
+          position: relative; }
+        
+        /*contact */
+        #contact {
+          position: relative; }
+          #contact:before {
+            content: '';
+            @include positionDispl;
+            top: 0;
+            left: 0;
+            width: $maxWidth;
+            height: $maxWidth;
+            background: url("https://image.ibb.co/h9qYHA/bg-video.png") no-repeat center center;
+            opacity: 0.1;
+            z-index: -1; }
+        
+        h2, h3 {
+          position: relative;
+          font-family: $fontMain;
+          text-transform: uppercase;
+          padding-bottom: 14px;
+          margin-bottom: 30px;
+          font-size: 22px;
+          font-size: 1.375rem; }
+          h2:after, h3:after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 72px;
+            height: 3px;
+            left: -webkit-calc(50% - 36px);
+            left: calc(50% - 36px);
+            bottom: 0px;
+            background:$btnColor; }
+        
+        h3 {
+          text-transform: none; }
 
-
-
-
-
-
-
-
-
-
-
-                    .autoprefixer {
-                        user-select: none;
-                        } 
-
-
-
-
-
-
-
-
-
+        .autoprefixer {
+          user-select: none;
+                       } 

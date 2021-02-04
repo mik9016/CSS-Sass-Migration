@@ -1,6 +1,7 @@
-@import '../utils/mixins.scss';
 @import '../utils/variables.scss';
+@import '../utils/mixins.scss';
 @import '../base/typography.scss';
+
 
 
 /* LAYOUT  */
@@ -11,23 +12,33 @@ header {
     padding: 15% 0 0 0;
     min-height: 650px; }
   
-  .title-main, h1 {
+ 
+
+  .title-main{
+    @include titleMain;
+    span{
+      display: block;
+      &:last-child{
+        @include fontSizeTitle;
+      }
+    }
+  }
+  h1{
+    @include titleMain;
+    span{
+      display: block;
+      &:last-child{
+        @include fontSizeTitle;
+      }
+    }
+  }
     
-    line-height: 1.2;
-    font-size: 30px;
-    font-size: 1.875rem; }
-    .title-main span, h1 span {
-      display: block; }
-      .title-main span:last-child, h1 span:last-child {
-        font-size: 23px;
-        font-size: 1.4375rem; }
   
   .title-sub {
     font-size: 48px;
     font-size: 3rem;
-    position: relative; }
-  
-    .title-sub:after {
+    position: relative; 
+    &:after {
       content: '';
       @include positionDispl;
       width: 82px;
@@ -35,7 +46,9 @@ header {
       left: -webkit-calc(50% - 41px);
       left: calc(50% - 41px);
       bottom: -10px;
-      background: #FFFFFF; }
+      background: $figureColor; }
+  }
+
   
   .title-blurb {
      span {
