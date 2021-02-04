@@ -10,7 +10,9 @@ header {
     background: url("https://image.ibb.co/jBXfxA/bg-contact.jpg") no-repeat center center/cover;
     color: $figureColor;
     padding: 15% 0 0 0;
-    min-height: 650px; }
+    min-height: 650px; 
+   
+  }
   
  
 
@@ -51,6 +53,7 @@ header {
 
   
   .title-blurb {
+    padding: 40px 0;
      span {
       display: block;
       line-height: 25px; }

@@ -74,15 +74,20 @@
             width:  $maxWidth;
             padding: 25px;
             line-height: 1.5;
-            color: #686868; }
+            color: $layoutColor; }
           
           .container {
             width:  $maxWidth;
             margin: 0 auto;
-            max-width: 1200px; }
-          
-          .text-center, .social-wrap, h2, h3, .nav-main {
-            text-align: center; }
+            max-width: 1200px; 
+
+            
+            }
+           
+            .text-center,.social-wrap, h2, h3, .nav-main {
+            text-align: center;
+  
+            }
           
           .arrow {
             -webkit-transition: all 0.5s;
@@ -98,7 +103,7 @@
       /* buttons */
       button {
           background-color: $btnColor;
-          color: #FFFFFF;
+          color: $figureColor;
           border: none;
           cursor: pointer;
           padding: 10px 30px;
@@ -107,9 +112,12 @@
           font-size: 0.75rem;
           -webkit-transition: opacity 0.5s;
           -o-transition: opacity 0.5s;
-          transition: opacity 0.5s; }
-          button:hover {
-            opacity: 0.6; }
+          transition: opacity 0.5s; 
+          &:hover{
+            opacity: 0.6; 
+          }
+        }
+         
         
         .button-send {
           margin-top: 10px; }
@@ -132,7 +140,7 @@
           font-size: 0.75rem;
           outline: none;
           padding: 15px;
-          color: #686868;
+          color: $layoutColor;
           border: 2px solid $btnColor;
           margin-bottom: 20px; }
         
